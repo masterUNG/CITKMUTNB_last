@@ -10,7 +10,7 @@
 
 [![IMG_6065.jpg](https://s26.postimg.cc/kajrs6fbt/IMG_6065.jpg)](https://postimg.cc/image/7j5llo5jp/)
 
-https://www.facebook.com/android.Training.by.EWTC
+https://bit.ly/32yar4n
 
 http://line.me/ti/p/XI-Ksj7Jzq
 
