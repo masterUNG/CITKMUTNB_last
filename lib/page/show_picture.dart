@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:citkmutnb/utility/my_constant.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -32,10 +33,13 @@ class _ShowPictureState extends State<ShowPicture> {
 
     for (var map in result) {
       Widget myWidget = Container(
-        width: 80,
-        height: 80,
-        child: Image.network(
-            '${MyConstant().domain}/cit/image_roomenet/${map['img_name']}'),
+        width: MediaQuery.of(context).size.width * 0.8,
+        height: MediaQuery.of(context).size.height,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.network(
+              '${MyConstant().domain}/cit/image_roomenet/${map['img_name']}'),
+        ),
       );
       setState(() {
         widgets.add(myWidget);
@@ -51,9 +55,23 @@ class _ShowPictureState extends State<ShowPicture> {
           ? Center(
               child: CircularProgressIndicator(),
             )
-          : ListView.builder(itemCount: widgets.length,
-              itemBuilder: (context, index) => widgets[index],
-            ),
+          : buildCarouselSlider(),
+    );
+  }
+
+  CarouselSlider buildCarouselSlider() {
+    return CarouselSlider(
+      items: widgets,
+      options: CarouselOptions(
+        height: MediaQuery.of(context).size.height,autoPlay: false,
+      ),
+    );
+  }
+
+  ListView buildListView() {
+    return ListView.builder(
+      itemCount: widgets.length,
+      itemBuilder: (context, index) => widgets[index],
     );
   }
 }

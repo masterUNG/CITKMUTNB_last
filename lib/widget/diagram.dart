@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:citkmutnb/models/image_diagram_model.dart';
-import 'package:citkmutnb/page/mycontent.dart';
 import 'package:citkmutnb/page/show_image_from_diagram.dart';
 import 'package:citkmutnb/utility/my_constant.dart';
 import 'package:citkmutnb/utility/my_style.dart';

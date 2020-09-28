@@ -1,5 +1,5 @@
 class MyConstant {
-  String domain = 'http://d9924bd52530.ngrok.io';
+  String domain = 'http://d5273e531101.ngrok.io';
 
   List<String> categorys = [
     'เครื่องกล',
