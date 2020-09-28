@@ -55,10 +55,25 @@ class _DiagramState extends State<Diagram> {
           onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => ShowImageFromDiagram(nameRoom: listModel[index][index2].nameroom),
+              builder: (context) => ShowImageFromDiagram(
+                  nameRoom: listModel[index][index2].nameroom),
             ),
           ),
-          child: Text(listModel[index][index2].nameroom),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 200,
+                    child: Text(listModel[index][index2].nameroom),
+                  ),
+                  Text('ชั้น ${listModel[index][index2].className}')
+                ],
+              ),Divider(thickness: 1,color: Colors.purple.shade700,),
+            ],
+          ),
         ),
       );
 

@@ -1,5 +1,7 @@
+import 'package:citkmutnb/page/big_boss.dart';
 import 'package:citkmutnb/utility/my_style.dart';
 import 'package:flutter/material.dart';
+import 'package:photo_view/photo_view.dart';
 
 class Myboss extends StatefulWidget {
   @override
@@ -94,9 +96,22 @@ class _MybossState extends State<Myboss> {
     );
   }
 
-  Container createImage(String string) => Container(
-        width: 180.0,
-        height: 230.0,
-        child: Image.asset('images/$string.png'),
+  GestureDetector createImage(String string) => GestureDetector(
+        onTap: () {
+          // print('string ==>> $string');
+          String pathImage = 'images/$string.png';
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => BigBoss(pathImage: pathImage,),
+            ),
+          );
+        },
+        child: Container(
+          width: 180.0,
+          height: 230.0,
+          child: Image.asset('images/$string.png'),
+          // child: PhotoView(imageProvider: AssetImage('images/$string.png')),
+        ),
       );
 }
