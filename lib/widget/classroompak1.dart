@@ -109,30 +109,28 @@ class _ClassRoomPak1State extends State<ClassRoomPak1> {
                   shrinkWrap: true,
                   physics: ScrollPhysics(),
                   itemCount: listRooms[index].length,
-                  itemBuilder: (context, index2) => Row(
-                    children: <Widget>[
-                      Container(
-                        width: 100,
-                        height: 100,
-                        child: GestureDetector(
-                          onTap: () {
-                            String branch = branchs[index];
-                            String room = listRooms[index][index2];
-                            MaterialPageRoute route = MaterialPageRoute(
-                              builder: (context) => ShowPicture(room: room, branch: branch,),
-                            );Navigator.push(context, route);
-                          },
+                  itemBuilder: (context, index2) => GestureDetector(
+                    onTap: () {
+                      String branch = branchs[index];
+                      String room = listRooms[index][index2];
+                      MaterialPageRoute route = MaterialPageRoute(
+                        builder: (context) => ShowPicture(room: room, branch: branch,),
+                      );Navigator.push(context, route);
+                    },
+                    child: Row(
+                      children: [
+                        Container(width: 150,
                           child: Card(
                             child: Center(
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Text(listRooms[index][index2]),
                               ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 )
               ],
